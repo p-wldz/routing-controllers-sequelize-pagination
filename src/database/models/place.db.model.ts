@@ -9,10 +9,6 @@ export default class Place extends Model<Place> {
     @Column(DataType.INTEGER)
     id: number;
 
-    @Unique
-    @Column(DataType.INTEGER)
-    olxId: number;
-
     @Column(DataType.TEXT)
     name: string;
 
