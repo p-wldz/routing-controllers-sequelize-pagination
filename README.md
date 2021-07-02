@@ -12,3 +12,18 @@ Project shows how structure should look like with configuration.
 - Update DB, run: `npm run sync-db`
 - For development process use `nodemon`
 
+
+## Using
+Project has DTO with pagination
+```javascript
+export type PaginationResult<T> = {
+    total: number,
+    totalInPage: number,
+    pages: number,
+    page: number,
+    data: T[]
+}
+```
+
+which means client can catch result of which page is, what is the number of pages etc.
+Client can control result by QueryParams `page=1&limit=10&filters=[]`
