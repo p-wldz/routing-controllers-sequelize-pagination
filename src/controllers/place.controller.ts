@@ -2,22 +2,18 @@ import {
     Get,
     Param,
     JsonController,
+    QueryParams,
 } from 'routing-controllers'
-import County from '../database/models/county.db.model';
-import Voivodeship from '../database/models/voivodeship.db.model';
-import Place from '../database/models/place.db.model'
+import { PaginationDto } from '../types/dtos/pagination.dto';
+import * as placeService from '../services/place.service';
 
 @JsonController()
 export default class {
 
     @Get('/places')
-    async places() {
-        const places = await Place.findAll({
-            include: [
-                Voivodeship, County
-            ]
-        });
-        return places.map(place => place.toJSON());
-
+    async places(
+        @QueryParams({ validate: false }) pagination?: PaginationDto
+    ) {
+        return await placeService.getPlacesWithPagination(pagination);
     }
 }
