@@ -1,0 +1,42 @@
+{
+  "name": "routing-controllers-sequelize-pagination",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=local npm run serve",
+    "build": "npm run build-ts",
+    "serve": "node dist/server.js",
+    "watch-node": "NODE_ENV=local nodemon dist/server.js",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "test": "mocha -r ts-node/register test/**/*.spec.ts",
+    "migrate-places": "ts-node ./src/database/seeds/add-places.ts",
+    "sync-db": "ts-node ./src/database/sync-db.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p-wldz/routing-controllers-sequelize-pagination.git"
+  },
+  "author": "Przemyslaw Wlodarczyk",
+  "license": "ISC",
+  "homepage": "https://github.com/p-wldz/routing-controllers-sequelize-pagination#readme",
+  "dependencies": {
+    "@types/bluebird": "^3.5.33",
+    "@types/validator": "^13.1.2",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "class-transformer": "^0.3.1",
+    "class-validator": "^0.12.2",
+    "mysql2": "^2.2.5",
+    "reflect-metadata": "^0.1.13",
+    "routing-controllers": "^0.9.0-alpha.6",
+    "sequelize": "^5.22.3",
+    "sequelize-typescript": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.0",
+    "typescript": "^4.1.3"
+  }
+}

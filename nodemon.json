@@ -1,0 +1,9 @@
+{
+    "verbose": true,
+    "ignore": ["public/*", "node_modules/*"],
+    "watch": [
+      "src/*"
+    ],
+    "ext": "ts js json jsx scss hbs html ejs css sass",
+    "exec": "ts-node ./src/server.ts"
+  }
